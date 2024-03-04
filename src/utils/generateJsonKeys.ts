@@ -8,7 +8,7 @@ type Props = {
 export function generateJsonKeys({ data, key }: Props) {
   return data.map((obj) =>
     obj[key]
-      .toString()
+      ?.toString()
       .toLocaleLowerCase()
       .trim()
       .replace(/[^a-zA-Z0-9 ]/g, '')

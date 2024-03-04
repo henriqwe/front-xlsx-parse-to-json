@@ -16,7 +16,7 @@ export function formatObject({ data, jsonKeys, columns }: Props) {
 
   for (const i in data) {
     for (const [key, value] of Object.entries(data[i])) {
-      if (!columns[key]) {
+      if (!columns[key] || !value) {
         continue;
       }
       obj[key] = { ...obj[key], [jsonKeys[i]]: value.toString().trim() };
